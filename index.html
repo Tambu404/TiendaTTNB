@@ -222,6 +222,9 @@ h1,h2,h3{font-family:var(--display);font-weight:400}
 #heroText{white-space:pre-line}
 .info li span.pn{font-family:var(--display);font-size:20px;letter-spacing:.03em;color:var(--ink)}
 
+.hero h1.has-logo{font-size:0;line-height:0}
+.hero-logo{display:block;width:auto;height:auto;max-width:min(100%,560px);max-height:280px}
+
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -305,6 +308,10 @@ const CONFIG = {
   titulo: ["TIENDA", "TTNB"],          // cada elemento es una línea del título
   // Colores de las letras de la última línea del título, en orden (se repiten si hay más letras)
   coloresTitulo: ["#5BCEFA", "#F5A9B8", "#F9D648", "#8B5CF6"],   // rosa, celeste, amarillo, violeta
+  // Logo de la liga en lugar del título de texto. Subí la imagen (mejor PNG con fondo transparente) a img/logo-liga.png.
+  // Si el archivo no existe o dejás esto vacío (""), se muestra el título de texto de arriba.
+  logoTitulo: "img/logo-liga.png",
+  logoAlt: "Tienda TTNB · Liga Deportiva Travesti, Trans y No Binaria",
   subtituloHero: "Tienda oficial de la Liga Deportiva Travesti, Trans y No Binaria.\nCon cada compra nos ayudás a garantizar espacios deportivos seguros para la comunidad TTNB.",
 
   pasos: ["Elegí tu producto", "Reservalo por WhatsApp", "Coordinamos retiro o envío"],
@@ -450,8 +457,18 @@ let catActiva = "Todos", busqueda = "";
 document.title = CONFIG.tituloPagina;
 $("logo").textContent = CONFIG.logoTexto;
 $("topTag").textContent = CONFIG.barraSuperior;
-$("heroTitle").innerHTML = CONFIG.titulo.map((t, i) => "<span>" + (i === 0 ? t :
-  [...t].map((ch, j) => '<i style="color:' + CONFIG.coloresTitulo[j % CONFIG.coloresTitulo.length] + '">' + ch + "</i>").join("")) + "</span>").join("");
+function tituloTexto() {
+  $("heroTitle").classList.remove("has-logo");
+  $("heroTitle").innerHTML = CONFIG.titulo.map((t, i) => "<span>" + (i === 0 ? t :
+    [...t].map((ch, j) => '<i style="color:' + CONFIG.coloresTitulo[j % CONFIG.coloresTitulo.length] + '">' + ch + "</i>").join("")) + "</span>").join("");
+}
+if (CONFIG.logoTitulo) {
+  const im = new Image();
+  im.className = "hero-logo"; im.alt = CONFIG.logoAlt;
+  im.onload = () => { $("heroTitle").classList.add("has-logo"); $("heroTitle").innerHTML = ""; $("heroTitle").appendChild(im); };
+  im.onerror = tituloTexto;
+  im.src = CONFIG.logoTitulo;
+} else tituloTexto();
 $("igLink").href = "https://www.instagram.com/" + CONFIG.instagram;
 $("igText").textContent = "@" + CONFIG.instagram;
 $("heroText").textContent = CONFIG.subtituloHero;

@@ -388,7 +388,7 @@ const CONFIG = {
 let PRODUCTOS = [
   /* ---------- INDUMENTARIA ---------- */
   { id:"01", categoria:"Indumentaria", nombre:"Remera Liga", precio:20000, etiqueta:"A pedido",
-    descripcion:"Remera de la Liga Deportiva TTNB. Talles XS al 2XL. Se hace a pedido: escribinos y coordinamos talle y tiempos de entrega.",
+    descripcion:"Remera de la Liga Deportiva TTNB. Se hace a pedido: escribinos y coordinamos talle y tiempos de entrega.",
     imagenes:["img/remeraliga.webp"], detalles:[["Producción","A pedido"],["Talles","XS al 2XL"]], estado:"" },
 
   { id:"02", categoria:"Indumentaria", nombre:"Musculosa Liga [Negra]", precio:20000, etiqueta:"A pedido",
@@ -397,57 +397,57 @@ let PRODUCTOS = [
 
   { id:"03", categoria:"Indumentaria", nombre:"Gorra", precio:15000, etiqueta:"A pedido",
     descripcion:"Gorra de la Liga Deportiva TTNB. Se hace a pedido: escribinos y coordinamos tiempos de entrega.",
-    imagenes:["img/gorra.jpg"], detalles:[["Producción","A pedido"]], estado:"" },
+    imagenes:["img/gorra.webp"], detalles:[["Producción","A pedido"]], estado:"" },
 
   { id:"04", categoria:"Indumentaria", nombre:"Toallón", precio:25000, stock:"1 unidad",
-    descripcion:"Toallón con el diseño “Entrena con Orgullo”. Pieza única.",
-    imagenes:["img/toallon.jpg"], detalles:[["Diseño","Entrena con Orgullo"]], estado:"" },
+    descripcion:"Toallón con el diseño “Entrena con Orgullo”.",
+    imagenes:["img/toallon.webp"], detalles:[["Diseño","Entrena con Orgullo"]], estado:"Disponible" },
 
   { id:"05", categoria:"Indumentaria", nombre:"Toalla de mano", precio:8000, stock:"1 unidad",
-    descripcion:"Toalla de mano con el diseño Bandera Liga. Pieza única.",
-    imagenes:["img/toalla-mano.jpg"], detalles:[["Diseño","Bandera Liga"]], estado:"" },
+    descripcion:"Toalla de mano con la Bandera de la Liga.",
+    imagenes:["img/toalla-mano.webp"], detalles:[["Diseño","Bandera Liga"]], estado:"Disponible" },
 
   /* ---------- ACCESORIOS ---------- */
   { id:"06", categoria:"Accesorios", nombre:"Abanico", precio:5000, stock:"4 unidades",
-    descripcion:"Abanico de la Liga para los días de calor, en la cancha o en la marcha.",
-    imagenes:["img/abanico.jpg"], detalles:[], estado:"" },
+    descripcion:"Abanico arcoiris de la Liga para la cancha y la marcha.",
+    imagenes:["img/abanico.webp"], detalles:[], estado:"Disponible" },
 
   { id:"07", categoria:"Accesorios", nombre:"Totebag", precio:8000, stock:"7 unidades en total",
-    descripcion:"Totebag de tela con distintos diseños. El stock de cada diseño se aclara en la publicación: consultanos cuál te gusta.",
-    imagenes:["img/totebag.jpg"], detalles:[["Diseños","Distintos diseños"]], estado:"" },
+    descripcion:"Totebag de lienzo crudo con distintos diseños. El stock de cada diseño se aclara en la publicación: consultanos cuál te gusta.",
+    imagenes:["img/totebag.webp"], detalles:[["Diseños","Distintos diseños"]], estado:"Disponible" },
 
   { id:"08", categoria:"Accesorios", nombre:"Vaso de aluminio 650 cc", precio:5000, stock:"3 unidades en total",
     descripcion:"Vaso de aluminio de 650 cc con distintos diseños. El stock de cada diseño se aclara en la publicación.",
-    imagenes:["img/vaso.jpg"], detalles:[["Capacidad","650 cc"],["Diseños","Distintos diseños"]], estado:"" },
+    imagenes:["img/vaso.webp"], detalles:[["Capacidad","650 cc"],["Diseños","Hecho por Travestis", "Consultar otros diseños disponibles"]], estado:"Disponible" },
 
   { id:"09", categoria:"Accesorios", nombre:"Prendedor Hecho por Travestis", precio:2000, stock:"8 unidades",
     descripcion:"Prendedor con el sello “Hecho por Travestis”.",
-    imagenes:["img/prendedor-travestis.jpg"], detalles:[], estado:"" },
+    imagenes:["img/prendedor-travestis.webp"], detalles:[], estado:"Disponible" },
 
   { id:"10", categoria:"Accesorios", nombre:"Prendedor Liga Deportiva TTNB", precio:2000, stock:"2 unidades",
-    descripcion:"Prendedor con el escudo de la Liga Deportiva TTNB.",
-    imagenes:["img/prendedor-liga.jpg"], detalles:[], estado:"" },
+    descripcion:"Prendedor metalico 56mm Liga Deportiva TTNB.",
+    imagenes:["img/prendedor-liga.webp"], detalles:[], estado:"Disponible" },
 
   { id:"11", categoria:"Accesorios", nombre:"Plancha de stickers", precio:4000, stock:"15 unidades",
-    descripcion:"Plancha de stickers de la Liga para decorar tu botella, tu bolso o tu cuaderno.",
-    imagenes:["img/plancha-stickers.jpg"], detalles:[], estado:"" },
+    descripcion:"Plancha de stickers UV de nuestros travestis.",
+    imagenes:["img/plancha-stickers.webp"], detalles:[], estado:"Disponible" },
 
   { id:"12", categoria:"Accesorios", nombre:"Stickers UV individuales", precio:500, stock:"Consultar stock",
     descripcion:"Stickers UV sueltos, resistentes al agua y al sol, con distintos diseños. Consultanos qué diseños quedan.",
-    imagenes:["img/stickers-uv.jpg"], detalles:[["Diseños","Distintos diseños"]], estado:"" },
+    imagenes:["img/stickers-uv.webp"], detalles:[["Diseños","Distintos diseños"]], estado:"Disponible" },
 
   /* ---------- COMBOS ---------- */
   { id:"13", categoria:"Combos", nombre:"Remera Liga + Gorra", precio:30000, anterior:35000, etiqueta:"A pedido",
     descripcion:"Remera Liga y gorra juntas a precio especial. Se hace a pedido: coordinamos talle y tiempos de entrega.",
-    imagenes:["img/combo-remera-gorra.jpg"], detalles:[["Incluye","Remera Liga + Gorra"]], estado:"" },
+    imagenes:["img/combo-remera-gorra.webp"], detalles:[["Incluye","Remera Liga + Gorra"]], estado:"" },
 
   { id:"14", categoria:"Combos", nombre:"Musculosa Liga + Gorra", precio:30000, anterior:35000, etiqueta:"A pedido",
     descripcion:"Musculosa Liga y gorra juntas a precio especial. Se hace a pedido: coordinamos talle y tiempos de entrega.",
-    imagenes:["img/combo-musculosa-gorra.jpg"], detalles:[["Incluye","Musculosa Liga + Gorra"]], estado:"" },
+    imagenes:["img/combo-musculosa-gorra.webp"], detalles:[["Incluye","Musculosa Liga + Gorra"]], estado:"" },
 
   { id:"15", categoria:"Combos", nombre:"Abanico + Totebag + Vaso", precio:16000, anterior:18000,
     descripcion:"Abanico, totebag y vaso de aluminio juntos a precio especial. Sujeto al stock de cada diseño: consultanos.",
-    imagenes:["img/combo-abanico-totebag-vaso.jpg"], detalles:[["Incluye","Abanico + Totebag + Vaso de aluminio 650 cc"]], estado:"" }
+    imagenes:["img/combo-abanico-totebag-vaso.webp"], detalles:[["Incluye","Abanico + Totebag + Vaso de aluminio 650 cc"]], estado:"" }
 ];
 
 /* =====================================================================

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Liga Deportiva TTNB</title>
+<title>Liga Deportiva TTNB · Merch oficial</title>
 <meta name="description" content="Merch oficial de la Liga Deportiva TTNB. Elegí y reservá por WhatsApp.">
 <meta name="theme-color" content="#8B5CF6">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -241,7 +241,6 @@ h1,h2,h3{font-family:var(--display);font-weight:400}
 <header class="top">
   <div class="wrap">
     <a class="logo" href="#" id="logo"></a>
-    <small id="topTag"></small>
     <div class="right"><a class="btn-mode ig" id="igLink" target="_blank" rel="noopener" aria-label="Instagram de la Liga Deportiva TTNB"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span id="igText"></span></a><button class="btn-mode" id="cartBtn" type="button" aria-label="Ver mi carrito">CARRITO <b id="cartN">0</b></button><button class="btn-mode" id="mode" type="button" aria-label="Cambiar entre modo claro y oscuro">◐ <span class="mw">MODO</span></button></div>
   </div>
 </header>
@@ -308,7 +307,6 @@ const CONFIG = {
 
   logoTexto: "Liga Deportiva TTNB",     // texto de arriba a la izquierda (tipografía Breaker Rocking o Bebas Neue)
   tituloPagina: "Liga Deportiva TTNB · Merch oficial",
-  barraSuperior: "",
   instagram: "LigaDeportivaTTNB",      // usuario de Instagram (sin @); se muestra arriba del título con su ícono
   titulo: ["TIENDA", "TTNB"],          // cada elemento es una línea del título
   // Colores de las letras de la última línea del título, en orden (se repiten si hay más letras)
@@ -463,7 +461,6 @@ let catActiva = "Todos", busqueda = "";
 /* ---- textos fijos ---- */
 document.title = CONFIG.tituloPagina;
 $("logo").textContent = CONFIG.logoTexto;
-$("topTag").textContent = CONFIG.barraSuperior;
 function tituloTexto() {
   $("heroTitle").classList.remove("has-logo");
   $("heroTitle").innerHTML = CONFIG.titulo.map((t, i) => "<span>" + (i === 0 ? t :

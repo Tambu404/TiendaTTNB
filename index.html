@@ -226,6 +226,13 @@ h1,h2,h3{font-family:var(--display);font-weight:400}
 .hero-logo{display:block;width:auto;height:auto;max-width:min(100%,560px);max-height:280px}
 [data-theme="dark"] .hero-logo.l-light,[data-theme="light"] .hero-logo.l-dark{display:none}
 
+.btn-mode.ig{display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+.logo{font-size:clamp(18px,5vw,30px)}
+@media(max-width:640px){.ig span,.mw{display:none}.btn-mode{padding:6px 9px}.top .wrap{gap:8px}}
+
+.ig-foot{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:inherit;font-size:13px}
+.ig-foot:hover{color:var(--accent)}
+
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -235,16 +242,13 @@ h1,h2,h3{font-family:var(--display);font-weight:400}
   <div class="wrap">
     <a class="logo" href="#" id="logo"></a>
     <small id="topTag"></small>
-    <div class="right"><button class="btn-mode" id="cartBtn" type="button" aria-label="Ver mi carrito">CARRITO <b id="cartN">0</b></button><button class="btn-mode" id="mode" type="button" aria-label="Cambiar entre modo claro y oscuro">◐ MODO</button></div>
+    <div class="right"><a class="btn-mode ig" id="igLink" target="_blank" rel="noopener" aria-label="Instagram de la Liga Deportiva TTNB"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span id="igText"></span></a><button class="btn-mode" id="cartBtn" type="button" aria-label="Ver mi carrito">CARRITO <b id="cartN">0</b></button><button class="btn-mode" id="mode" type="button" aria-label="Cambiar entre modo claro y oscuro">◐ <span class="mw">MODO</span></button></div>
   </div>
 </header>
 
 <main>
   <section class="hero">
     <div class="wrap">
-      <div class="tag"><a id="igLink" target="_blank" rel="noopener" aria-label="Instagram de la Liga Deportiva TTNB">
-        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        <span id="igText"></span></a></div>
       <h1 id="heroTitle"></h1>
       <p id="heroText"></p>
       <ol class="steps" id="steps"></ol>
@@ -282,7 +286,7 @@ h1,h2,h3{font-family:var(--display);font-weight:400}
 </main>
 
 <footer>
-  <div class="wrap"><span id="footL"></span><span id="footR"></span></div>
+  <div class="wrap"><a id="footIg" class="ig-foot" target="_blank" rel="noopener" aria-label="Instagram de la Liga Deportiva TTNB"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span id="footIgText"></span></a><span id="footR"></span></div>
 </footer>
 
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
@@ -331,7 +335,6 @@ const CONFIG = {
   ctaTexto: "Reservamos por orden de pedido confirmado y el retiro o envío se coordina.\nSi sos Socie de la Liga tenés descuentos exclusivos.",
   ctaBoton: "ESCRIBINOS →",
 
-  pieIzquierda: "LIGA DEPORTIVA TTNB",
   pieDerecha: "PRECIOS EN PESOS ARGENTINOS",
 
   // Colores. Dejá vacío ("") para usar los de la hoja de estilos de arriba.
@@ -500,7 +503,8 @@ $("ctaTitle").textContent = CONFIG.ctaTitulo;
 $("ctaText").textContent = CONFIG.ctaTexto;
 $("ctaBtn").textContent = CONFIG.ctaBoton;
 $("ctaBtn").href = waLink(CONFIG.mensajeGeneral);
-$("footL").textContent = CONFIG.pieIzquierda;
+$("footIg").href = "https://www.instagram.com/" + CONFIG.instagram;
+$("footIgText").textContent = "@" + CONFIG.instagram;
 $("footR").textContent = CONFIG.pieDerecha;
 
 /* ---- colores ---- */

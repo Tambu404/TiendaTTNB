@@ -73,7 +73,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .hero p{max-width:52ch;font-size:19px;color:var(--muted)}
 .hero p strong{color:var(--ink)}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;margin-top:36px;border:2px solid var(--line);background:var(--surface)}
-.steps li{list-style:none;padding:16px 18px;display:flex;gap:14px;align-items:center;border-right:2px solid var(--line);font-weight:500}
+.steps li{list-:none;padding:16px 18px;display:flex;gap:14px;align-items:center;border-right:2px solid var(--line);font-weight:500}
 .steps li:last-child{border-right:0}
 .steps b{font-family:var(--display);color:var(--accent);font-size:20px}
 @media(max-width:680px){.steps li{border-right:0;border-bottom:2px solid var(--line)}.steps li:last-child{border-bottom:0}}
@@ -145,7 +145,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 .info h2{font-size:30px;line-height:1.1;letter-spacing:-.02em;padding-right:36px}
 .info .desc{color:var(--muted);white-space:pre-line}
 .info .price{font-size:30px;margin:8px 0}
-.info ul{list-style:none;padding:0;font-family:var(--display);font-size:13px;border-top:2px solid var(--line)}
+.info ul{list-:none;padding:0;font-family:var(--display);font-size:13px;border-top:2px solid var(--line)}
 .info li{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line)}
 .info li span:first-child{color:var(--muted)}
 .share{background:none;border:0;font-family:var(--display);font-size:12px;color:var(--muted);text-decoration:underline;text-align:left;padding:0}
@@ -234,6 +234,8 @@ h1,h2,h3{font-family:var(--display);font-weight:400}
 .ig-foot:hover{color:var(--accent)}
 
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.thumb img,.gal .main img{position:relative;z-index:1}
+.num,.state,.tagl{z-index:2}
 </style>
 </head>
 <body>

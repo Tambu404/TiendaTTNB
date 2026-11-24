@@ -6,6 +6,8 @@
 <title>Liga Deportiva TTNB · Merch oficial</title>
 <meta name="description" content="Merch oficial de la Liga Deportiva TTNB. Elegí y reservá por WhatsApp.">
 <meta name="theme-color" content="#8B5CF6">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -30,10 +32,10 @@
   --display:"Bebas Neue",Impact,"Arial Narrow",sans-serif;
   --logo:"Breaker Rocking","Bebas Neue",Impact,"Arial Narrow",sans-serif;
 }
-[data-theme="dark"]{
+[data-="dark"]{
   --bg:#0d0b14; --surface:#161224; --ink:#f3f0ff; --muted:#9a93b5; --line:#2e2748;
 }
-[data-theme="light"]{
+[data-="light"]{
   --bg:#f5f3fb; --surface:#ffffff; --ink:#17122b; --muted:#6b6485; --line:#17122b;
 }
 
@@ -44,8 +46,8 @@ body{
   background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
   background-size:56px 56px;background-position:-1px -1px;
 }
-[data-theme="dark"] body{background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px)}
-[data-theme="light"] body{background-image:linear-gradient(#17122b0d 1px,transparent 1px),linear-gradient(90deg,#17122b0d 1px,transparent 1px)}
+[data-="dark"] body{background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px)}
+[data-="light"] body{background-image:linear-gradient(#17122b0d 1px,transparent 1px),linear-gradient(90deg,#17122b0d 1px,transparent 1px)}
 a{color:inherit}
 button{font:inherit;color:inherit;cursor:pointer}
 :focus-visible{outline:3px solid var(--accent);outline-offset:2px}
@@ -224,7 +226,7 @@ h1,h2,h3{font-family:var(--display);font-weight:400}
 
 .hero h1.has-logo{font-size:0;line-height:0}
 .hero-logo{display:block;width:auto;height:auto;max-width:min(100%,560px);max-height:280px}
-[data-theme="dark"] .hero-logo.l-light,[data-theme="light"] .hero-logo.l-dark{display:none}
+[data-="dark"] .hero-logo.l-light,[data-="light"] .hero-logo.l-dark{display:none}
 
 .btn-mode.ig{display:inline-flex;align-items:center;gap:8px;text-decoration:none}
 .logo{font-size:clamp(18px,5vw,30px)}
@@ -395,11 +397,11 @@ let PRODUCTOS = [
     descripcion:"Musculosa de la Liga Deportiva TTNB, ideal para este verano. Corte Oversize. Se hace a pedido: escribinos y coordinamos talle y tiempos de entrega.",
     imagenes:["img/musculosanegra.webp"], detalles:[["Producción","A pedido"],["Talles","M al 2XL"]], estado:"" },
 
-  { id:"03", categoria:"Indumentaria", nombre:"Gorra", precio:15000, etiqueta:"A pedido",
+  { id:"03", categoria:"Indumentaria", nombre:"Gorras", precio:15000, etiqueta:"A pedido",
     descripcion:"Gorra de la Liga Deportiva TTNB. Se hace a pedido: escribinos y coordinamos tiempos de entrega.",
     imagenes:["img/gorra.webp"], detalles:[["Producción","A pedido"]], estado:"" },
 
-  { id:"04", categoria:"Indumentaria", nombre:"Toallón", precio:25000, stock:"1 unidad",
+  { id:"04", categoria:"Indumentaria", nombre:"Toallón [Entrena con Orgullo]", precio:25000, stock:"1 unidad",
     descripcion:"Toallón con el diseño “Entrena con Orgullo”.",
     imagenes:["img/toallon.webp"], detalles:[["Diseño","Entrena con Orgullo"]], estado:"Disponible" },
 
@@ -408,15 +410,15 @@ let PRODUCTOS = [
     imagenes:["img/toalla-mano.webp"], detalles:[["Diseño","Bandera Liga"]], estado:"Disponible" },
 
   /* ---------- ACCESORIOS ---------- */
-  { id:"06", categoria:"Accesorios", nombre:"Abanico", precio:5000, stock:"4 unidades",
+  { id:"06", categoria:"Accesorios", nombre:"Abanico Arcoiris", precio:5000, stock:"4 unidades",
     descripcion:"Abanico arcoiris de la Liga para la cancha y la marcha.",
     imagenes:["img/abanico.webp"], detalles:[], estado:"Disponible" },
 
-  { id:"07", categoria:"Accesorios", nombre:"Totebag", precio:8000, stock:"7 unidades en total",
-    descripcion:"Totebag de lienzo crudo con distintos diseños. El stock de cada diseño se aclara en la publicación: consultanos cuál te gusta.",
+  { id:"07", categoria:"Accesorios", nombre:"Totebags", precio:8000, stock:"7 unidades",
+    descripcion:"Totebag de lienzo crudo con distintos diseños. Consultanos disponibilidad de tu favorito.",
     imagenes:["img/totebag.webp"], detalles:[["Diseños","Distintos diseños"]], estado:"Disponible" },
 
-  { id:"08", categoria:"Accesorios", nombre:"Vaso de aluminio 650 cc", precio:5000, stock:"3 unidades en total",
+  { id:"08", categoria:"Accesorios", nombre:"Vaso de aluminio 650 cc", precio:5000, stock:"3 unidades",
     descripcion:"Vaso de aluminio de 650 cc con distintos diseños. El stock de cada diseño se aclara en la publicación.",
     imagenes:["img/vaso.webp"], detalles:[["Capacidad","650 cc"],["Diseños","Hecho por Travestis", "Consultar otros diseños disponibles"]], estado:"Disponible" },
 
@@ -515,9 +517,9 @@ if (CONFIG.colores.textoSobreAcento) document.documentElement.style.setProperty(
   let t = null;
   try { t = localStorage.getItem("tema"); } catch (e) {}
   if (!t) t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
-  document.documentElement.dataset.theme = t;
+  document.documentElement.dataset. = t;
   $("mode").onclick = () => {
-    t = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    t = document.documentElement.dataset. === "dark" ? "light" : "dark";
     document.documentElement.dataset.theme = t;
     try { localStorage.setItem("tema", t); } catch (e) {}
   };

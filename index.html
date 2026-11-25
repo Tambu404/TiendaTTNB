@@ -364,7 +364,7 @@ const CONFIG = {
   //   categoria: podés poner varias separadas con |   (Indumentaria|Nuevos ingresos)
   //   imagenes: separadas con |   (img/01.jpg|img/01b.jpg)      detalles: dato:valor separados con |   (Medidas:160 x 70|Estado:Bueno)
   // Si la planilla falla o está vacía, la web vuelve sola a la lista de abajo.
-  googleSheetCSV: "",
+  googleSheetCSV: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRQGdyPJNdJWCrGJLEp_6VM2uETpErwDI-BqE-4N-OACRQLn7GLSiJSepWpGxuMj0s7AHsXuujiveem/pub?gid=697865376&single=true&output=csv",
 
   // Estados que muestran una etiqueta y bloquean el botón. Cualquier otro texto en "estado" también funciona.
   estadosBloqueados: ["Reservado", "Vendido"]
@@ -403,20 +403,20 @@ let PRODUCTOS = [
 
   { id:"04", categoria:"Indumentaria", nombre:"Toallón [Entrena con Orgullo]", precio:25000, stock:"1 unidad",
     descripcion:"Toallón con el diseño “Entrena con Orgullo”.",
-    imagenes:["img/toallon.webp"], detalles:[["Diseño","Entrena con Orgullo"]], estado:"Disponible" },
+    imagenes:["img/toallon.webp"], detalles:[["Diseño","Entrena con Orgullo"]], estado:"" },
 
   { id:"05", categoria:"Indumentaria", nombre:"Toalla de mano", precio:8000, stock:"1 unidad",
     descripcion:"Toalla de mano con la Bandera de la Liga.",
-    imagenes:["img/toalla-mano.webp"], detalles:[["Diseño","Bandera Liga"]], estado:"Disponible" },
+    imagenes:["img/toalla-mano.webp"], detalles:[["Diseño","Bandera Liga"]], estado:"" },
 
   /* ---------- ACCESORIOS ---------- */
   { id:"06", categoria:"Accesorios", nombre:"Abanico Arcoiris", precio:5000, stock:"4 unidades",
     descripcion:"Abanico arcoiris de la Liga para la cancha y la marcha.",
-    imagenes:["img/abanico.webp"], detalles:[], estado:"Disponible" },
+    imagenes:["img/abanico.webp"], detalles:[], estado:"" },
 
   { id:"07", categoria:"Accesorios", nombre:"Totebags", precio:8000, stock:"7 unidades",
     descripcion:"Totebag de lienzo crudo con distintos diseños. Consultanos disponibilidad de tu favorito.",
-    imagenes:["img/totebag.webp"], detalles:[["Diseños","Distintos diseños"]], estado:"Disponible" },
+    imagenes:["img/totebag.webp"], detalles:[["Diseños","Distintos diseños"]], estado:"" },
 
   { id:"08", categoria:"Accesorios", nombre:"Vaso de aluminio 650 cc", precio:5000, stock:"3 unidades",
     descripcion:"Vaso de aluminio de 650 cc con distintos diseños. El stock de cada diseño se aclara en la publicación.",
@@ -428,19 +428,19 @@ let PRODUCTOS = [
 
   { id:"09", categoria:"Accesorios", nombre:"Prendedor Hecho por Travestis", precio:2000, stock:"8 unidades",
     descripcion:"Prendedor con el sello “Hecho por Travestis”.",
-    imagenes:["img/prendedor-travestis.webp"], detalles:[], estado:"Disponible" },
+    imagenes:["img/prendedor-travestis.webp"], detalles:[], estado:"" },
 
   { id:"10", categoria:"Accesorios", nombre:"Prendedor Liga Deportiva TTNB", precio:2000, stock:"2 unidades",
     descripcion:"Prendedor metalico 56mm Liga Deportiva TTNB.",
-    imagenes:["img/prendedor-liga.webp"], detalles:[], estado:"Disponible" },
+    imagenes:["img/prendedor-liga.webp"], detalles:[], estado:"" },
 
   { id:"11", categoria:"Accesorios", nombre:"Plancha de stickers", precio:4000, stock:"15 unidades",
     descripcion:"Plancha de stickers UV de nuestros travestis.",
-    imagenes:["img/plancha-stickers.webp"], detalles:[], estado:"Disponible" },
+    imagenes:["img/plancha-stickers.webp"], detalles:[], estado:"" },
 
   { id:"12", categoria:"Accesorios", nombre:"Stickers UV individuales", precio:500, stock:"Consultar stock",
     descripcion:"Stickers UV sueltos, resistentes al agua y al sol, con distintos diseños. Consultanos qué diseños quedan.",
-    imagenes:["img/stickers-uv.webp"], detalles:[["Diseños","Distintos diseños"]], estado:"Disponible" },
+    imagenes:["img/stickers-uv.webp"], detalles:[["Diseños","Distintos diseños"]], estado:"" },
 
   /* ---------- COMBOS ---------- */
   { id:"13", categoria:"Combos", nombre:"Remera Liga + Gorra", precio:30000, anterior:35000, etiqueta:"A pedido",
